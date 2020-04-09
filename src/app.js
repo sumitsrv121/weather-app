@@ -6,6 +6,8 @@ const getForeCast = require('./utils/forecast')
 const request = require('request')
 
 const app = express()
+const port = process.env.PORT || 3000
+
 const pathForPublicDirectory = path.join(__dirname, '../public')
 const viewsDirectoryPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -91,6 +93,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up and running')
 })
