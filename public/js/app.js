@@ -12,10 +12,11 @@ myForm.addEventListener('submit', (e) => {
                     document.getElementById("message").innerHTML = data.error
                 else
                     document.getElementById("message").innerHTML = data.errorMessage
+                maxTempText.textContent = ''
                 return
             }
             document.getElementById("message").innerHTML = data.message
-            maxTempText.textContent = data.maxTemperature
+            maxTempText.textContent = 'The maximum temperature in the city will be ' + data.maxTemperature + ' degree celcius.'
         })
     })
 })
