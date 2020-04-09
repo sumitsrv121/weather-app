@@ -1,5 +1,6 @@
 const myForm = document.getElementById("myForm")
 const searchText = document.querySelector('input')
+const maxTempText = document.querySelector('#message1')
 
 myForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -14,6 +15,7 @@ myForm.addEventListener('submit', (e) => {
                 return
             }
             document.getElementById("message").innerHTML = data.message
+            maxTempText.textContent = data.maxTemperature
         })
     })
 })

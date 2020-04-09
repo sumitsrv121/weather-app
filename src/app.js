@@ -41,7 +41,7 @@ app.get('/weather', (req, res) => {
                 errorMessage: error
             })
         }
-        getForeCast(latitude, longitude, (error, { weather_stat, temperature, rain } = {}) => {
+        getForeCast(latitude, longitude, (error, { weather_stat, temperature, rain, maxTemperature } = {}) => {
             if (error) {
                 return res.send({
                     title: '404',
@@ -53,6 +53,7 @@ app.get('/weather', (req, res) => {
             res.send({
                 title: 'weather',
                 message,
+                maxTemperature,
                 name: 'Sumit Saurav'
             })
         })
